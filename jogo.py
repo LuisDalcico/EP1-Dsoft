@@ -1,8 +1,9 @@
-from funcoes import define_posicoes
+from funcoes import define_posicoes, posicao_valida
 from funcoes import preenche_frota
 from funcoes import faz_jogada
 from funcoes import posiciona_frota
 from funcoes import afundados
+from funcoes import define_posicoes
 
 linha = 2
 coluna = 4
@@ -95,4 +96,28 @@ tabuleiro = [
   [0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
 ]
 resultado = afundados(frota, tabuleiro)
+print(resultado)
+
+frota = {
+    "navio-tanque":[
+      [[6,1],[6,2],[6,3]],
+      [[4,7],[5,7],[6,7]]
+    ],
+    "contratorpedeiro":[
+      [[1,1],[2,1]],
+      [[2,3],[3,3]],
+      [[9,1],[9,2]]
+    ],
+    "submarino": [
+      [[0,3]],
+      [[4,5]],
+      [[8,9]],
+      [[8,4]]
+    ],
+}
+linha = 6
+coluna = 2
+orientacao = 'horizontal'
+tamanho = 4
+resultado = posicao_valida(frota, linha, coluna, orientacao, tamanho)
 print(resultado)
